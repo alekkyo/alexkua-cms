@@ -2,29 +2,33 @@
 
 The CMS that I use for my clients when developing websites for them. It's goal is to be as simple and intuitive as possible for the user, as well as being visually appealing and informative.
 
-### Installation
+## Installation
 To install the CMS, juste place the folder in your repertoire and access index.php. The CMS should recognize that it's your first time on the CMS and will help you setup your database and your super admin account.
 
-### Users
+## Users
 There are 3 types of users using the CMS:
 
-##### Super Admin
+###### Super Admin
 This user can do everything in the CMS, including restarting setup and managing admins.
-##### Admin
+###### Admin
 This user can create new pages, arrange the menu and manage users.
-##### User
+###### User
 This user can only edit content and upload images.
 
 
-### To-do list
+##To-do list
 Global
-- [ ] MySQL script to automatically create database tables
 - [ ] Find a way to manage Simple URLS
 - [ ] General CMS design
 - [ ] CMS security
+- [ ] Nice touches like TIME and Current temperature. 
 
 First time
 - [ ] User interface to setup DB and super admin account
+- [ ] MySQL script to automatically create database tables
+
+Dashboard
+- [ ] Dashboard with useful info
 
 Login
 - [ ] Login with secure hashing of passwords
