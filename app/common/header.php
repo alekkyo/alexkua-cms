@@ -1,7 +1,7 @@
 <?php
 	$query = "SELECT firstname, lastname, profile_pic FROM ak_users WHERE id = :id";
 	$stmt = $conn->prepare($query);
-	$stmt->execute(array(':id' => $_SESSION['user_id']));
+	$stmt->execute(array(':id' => $_SESSION['ak_user_id']));
 	if ($row = $stmt->fetch()) {
 		$firstname = $row["firstname"];
 		$lastname = $row["lastname"];

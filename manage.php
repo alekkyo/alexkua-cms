@@ -4,7 +4,7 @@
 	// Import the config file
 	include 'include/config.php';
 
-	if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
+	if(!isset($_SESSION['ak_user_id']) || $_SESSION['ak_user_id'] == "") {
 		header('Location: index.php');
 	}
 ?>

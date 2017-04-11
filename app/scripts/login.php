@@ -14,7 +14,7 @@
 	$stmt->execute(array(':email' => $email));
 	if ($row = $stmt->fetch()) {
 		if ($row["password"] == md5($password . $row['salt'])) {
-			$_SESSION["user_id"] = $row["id"];
+			$_SESSION["ak_user_id"] = $row["id"];
 			echo 1;
 		} else {
 			echo 0;

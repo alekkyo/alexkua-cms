@@ -5,11 +5,9 @@
 	// Import the config file
 	include 'include/config.php';
 
-	if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "") {
+	if(isset($_SESSION['ak_user_id']) && $_SESSION['ak_user_id'] != "") {
 		header('Location: manage.php');
 	}
-
-	echo bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
 ?>
 
 <html>
