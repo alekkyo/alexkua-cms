@@ -1,0 +1,26 @@
+-- Schema:
+
+alexkua_cms
+
+-- Tables:
+
+langues: ID, lang_id, lang_text
+
+users: ID, email, password, firstname, lastname, telephone, active
+
+articles_fr: ID, order, text, thumbnail_link, parent_id
+articles_en:
+
+articles_text_fr: ID, article_id, article_text
+articles_text_en:
+
+blog_articles_fr: ID, img_link, article_text, date_posted, tags, author_id
+blog_articles_en
+
+blog_comments: ID, blog_id, parent_comment_id, comment_text, up_like, down_like
+
+publicite: ID, img_link, link
+
+recommendations
+
+cle_magiques

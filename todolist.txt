@@ -1,0 +1,35 @@
+Login page
+----------
+Login with email
+Fetch in mysql database
+
+
+Manage page
+----------
+You can manage multiple pages
+Pages table = got all the pages
+In each page, get the corresponding text
+Text in page_content table
+Find an easy HTML editor?
+Screenshots of pages to edit
+Pages will be already set
+New pages = ASK ME
+
+
+Media manager
+----------
+Import images
+
+
+Config page
+----------
+Modify configuration file
+Website name, mysql name/password, etc...
+
+
+General
+----------
+Install SEO
+Watermark
+User manager?
+Manage page avec language?
