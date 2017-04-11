@@ -1,4 +1,4 @@
-CREATE TABLE `articles_en` (
+/*CREATE TABLE `articles_en` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `order` int(11) DEFAULT NULL,
   `text` varchar(100) NOT NULL,
@@ -110,4 +110,48 @@ CREATE TABLE `users` (
   `telephone` varchar(45) DEFAULT NULL,
   `active` int(11) DEFAULT 0,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;*/
+
+/* -- Schema:
+
+alexkua_cms
+
+-- Tables:
+
+langues: ID, lang_id, lang_text
+
+users: ID, email, password, firstname, lastname, telephone, active
+
+articles_fr: ID, order, text, thumbnail_link, parent_id
+articles_en:
+
+articles_text_fr: ID, article_id, article_text
+articles_text_en:
+
+blog_articles_fr: ID, img_link, article_text, date_posted, tags, author_id
+blog_articles_en
+
+blog_comments: ID, blog_id, parent_comment_id, comment_text, up_like, down_like
+
+publicite: ID, img_link, link
+
+recommendations
+
+cle_magiques
+
+*/
+
+CREATE TABLE `ak_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `salt` varchar(100) NOT NULL,
+  `telephone` varchar(45) NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '1' COMMENT 'Role 1: Super admin\nRole 2: Admin\nRole 3: Editor/Regular user',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `profile_pic` varchar(300) NOT NULL DEFAULT 'resources/img/default-profile.png',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
