@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	// Import the config file
@@ -8,55 +7,34 @@
 	if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] == "") {
 		header('Location: index.php');
 	}
-	
-	mysql_query("SET NAMES UTF8", $con);
-	$query = "SELECT firstname, lastname FROM users WHERE ID = " . $_SESSION['user_id'];
-	$result = mysql_query($query, $con);
-	
-	if($row = mysql_fetch_assoc($result)) {
-		$firstname = $row["firstname"];
-		$lastname = $row["lastname"];
-	}
-	
 ?>
-
 <html>
 <head>
 
 	<title><?php echo WEBSITE_NAME; ?> - Administrator</title>
 
 	<!-- Import css files -->
-	<link rel="stylesheet" type="text/css" href="css/global.css">
-	<link rel="stylesheet" type="text/css" href="css/manage.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/global.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/manage.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/alertify.min.css"/>
 	
 	<!-- Import javascript files -->
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="js/jquery.form.min.js"></script>
-	<script src="js/manage.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="resources/js/manage.js"></script>
+	<script src="resources/js/alertify.min.js"></script>
+	
+	<!-- Import javascript files -->
+	<!--<script src="js/jquery.form.min.js"></script>-->
 	
 	<!-- CK Editor -->
-	<script src="ckeditor/ckeditor.js"></script>
-	<script src="ckeditor/adapters/jquery.js"></script>
+	<!--<script src="ckeditor/ckeditor.js"></script>
+	<script src="ckeditor/adapters/jquery.js"></script>-->
 	
 </head>
 <body <?php if($testPage != "") echo "onload=\"openPage('".$testPage."')\""; ?>>
 	<!-- menu -->
+	<?php include "app/common/header.php"; ?>
 	<div id="menu">
-		<div id="menu_header">
-			<div id="menu_greeting">
-				Hello, <?php echo $firstname . " " . $lastname; ?> !<br>
-			</div>
-			<div id="menu_logout">
-				If it's not you, click <span class="fake-link" id="logout-button">here</span> to logout.
-			</div>
-			<div id="menu_title">
-				<?php echo WEBSITE_NAME; ?>
-			</div>
-			<div id="menu_subtitle">
-				Administrator
-			</div>
-		</div>
 		<div id="menu_content">
 			<h3>Menu</h3>
 			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_media/manage_media.php')">Manage media</div>
