@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	verticalCenterLogin();
 	$(window).resize(verticalCenterLogin);
 });
@@ -47,19 +46,17 @@ function login() {
 	if(isOk) {
 		$.ajax({
 			type: "POST",
-			url: "scripts/login.php",
+			url: "app/scripts/login.php",
 			data: { email: email, password: password }
 		})
 		.done(function( msg ) {
-			if(msg == "0") {
-				$("#error_text").fadeIn(500);
-				$("#error_text").html("Login failed, please retry.");
+			if(msg == "0" || msg == "") {
+				alertify.error("Login failed, please retry.");
 			} else {
 				window.location.href = "manage.php";
 			}
 		});
 	} else {
-		$("#error_text").fadeIn(500);
-		$("#error_text").html("Error with the login, please retry.");
+		alertify.error("Error with the login, please retry.");
 	}
 }

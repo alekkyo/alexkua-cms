@@ -1,18 +1,24 @@
 <?php
-
 	session_start();
 
 	// Import the config file
-	include '../include/config.php';
+	include '../../include/config.php';
 
 	// POST variable
 	$email = urldecode($_POST['email']);
 	$password = urldecode($_POST['password']);
-	
+
 	// Login form
-	if($email == "alexkua@me.com" && $password == "alex123") {
-		$_SESSION['user_id'] = 1;
-		echo 1;
+	$query = "SELECT id, password, salt FROM ak_users WHERE email = :email AND active = 1";
+	$stmt = $conn->prepare($query);
+	$stmt->execute(array(':email' => $email));
+	if ($row = $stmt->fetch()) {
+		if ($row["password"] == md5($password . $row['salt'])) {
+			$_SESSION["user_id"] = $row["id"];
+			echo 1;
+		} else {
+			echo 0;
+		}
 	} else {
 		echo 0;
 	}

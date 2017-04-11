@@ -8,22 +8,25 @@
 	if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "") {
 		header('Location: manage.php');
 	}
+
+	echo bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
 ?>
 
 <html>
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title><?php echo WEBSITE_NAME; ?> - Administrator</title>
+	<title><?php echo WEBSITE_NAME; ?> - Admin Panel</title>
 
 	<!-- Import css files -->
-	<link rel="stylesheet" type="text/css" href="css/global.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/global.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/login.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/alertify.min.css"/>
 	
 	<!-- Import javascript files -->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="js/login.js"></script>
-	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="resources/js/login.js"></script>
+	<script src="resources/js/alertify.min.js"></script>
+
 </head>
 <body>
 	<div id="login">
@@ -35,12 +38,7 @@
 				<span id="error_text"></span>
 			</div>
 	</div>
-	<div id="footer">
-		<div id="footer_left">
-			Alex Kua Content Management System, &#169; Copyright 2014.
-		</div>
-		<div id="footer_right">
-			Made by <a href="http://www.alexkua.com">Alex Kua</a>.
-		</div>
-	</div>
+	<?php
+		include_once "app/common/footer.php";
+	?>
 </body>
