@@ -15,7 +15,7 @@
 	$imgDirectoryUrl = "http://www.alexkua.com/projects/alexkua_cms/img/article_img";
 	
 	// insert test page to execute on load
-	$testPage = "scripts/manage_blog/manage_blog.php";
+	$testPage = "app/pages/manage_users/manage_users.php";
 	
 	// default lang
 	$lang = "fr";

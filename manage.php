@@ -38,9 +38,10 @@
 		<div id="menu_content">
 			<h3>Menu</h3>
 			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_media/manage_media.php')">Manage media</div>
-			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_blog/manage_blog.php')">Manage blog articles</div>
+			<!--<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_blog/manage_blog.php')">Manage blog articles</div>
 			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_magickeys/manage_magickeys.php')">Manage magic keys</div>
-			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_publicity/manage_publicity.php')">Manage publicity</div>
+			<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_publicity/manage_publicity.php')">Manage publicity</div>-->
+			<div class="menu_content_item menu_content_item_top" onclick="openPage('app/pages/manage_users/manage_users.php')">Manage users</div>
 			<!--<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/manage_users/manage_users.php')">Manage users</div>-->
 			<!--<div class="menu_content_item menu_content_item_top" onclick="openPage('scripts/global_configuration/global_configuration.php')">Global configuration</div>-->
 			<div onclick="logout()" class="menu_content_item menu_content_item_bottom">Log out</div>
