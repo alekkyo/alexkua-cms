@@ -1,10 +1,8 @@
-# AlexKuaCMS
+# alexkuaCMS
 
 The CMS that I use for my clients when developing websites for them. It's goal is to be as simple and intuitive as possible for the user, as well as being visually appealing and informative.
 
-## Installation
-To install the CMS, juste place the folder in your repertoire and access index.php. The CMS should recognize that it's your first time on the CMS and will help you setup your database and your super admin account.
-
+The application uses Laravel 5.6 PHP Framework.
 ## Users
 There are 3 types of users using the CMS:
 
