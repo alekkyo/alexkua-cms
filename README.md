@@ -16,10 +16,7 @@ This user can only edit content and upload images.
 
 ##To-do list
 Global
-- [ ] Find a way to manage Simple URLS
-- [ ] General CMS design
-- [ ] CMS security
-- [ ] Nice touches like TIME and Current temperature. 
+- [ ] Adapt theme to Laravel Layout+login
 
 First time
 - [ ] User interface to setup DB and super admin account
@@ -28,12 +25,9 @@ First time
 Dashboard
 - [ ] Dashboard with useful info
 
-Login
-- [ ] Login with secure hashing of passwords
-
 Pages
 - [ ] Creating a new page: ask for type
-- [ ] Creating a large blog page
+- [ ] Creating a large blog page (article)
 - [ ] Creating a simple page with HTML
 - [ ] Creating a small blog page
 
@@ -42,9 +36,7 @@ Menu
 - [ ] Managing menu and menu levels
 
 Manage media
-- [ ] File and image upload
-- [ ] Better files managing (folders, etc)
-- [ ] Create repertory
+- [ ] File and image upload, file manager
 
 Manage blog
 - [ ] Bulk actions like unpublishing and publishing
