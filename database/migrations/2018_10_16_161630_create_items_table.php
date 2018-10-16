@@ -13,16 +13,16 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ak_items', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description');
             $table->decimal('price');
             $table->decimal('price_special');
             $table->string('picture_url');
-            $table->integer('order');
-            $table->integer('category_id');
-            $table->integer('stock');
+            $table->unsignedInteger('order');
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('stock');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +35,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ak_items');
+        Schema::dropIfExists('items');
     }
 }

@@ -14,8 +14,9 @@ class CreateItemTagsTable extends Migration
     public function up()
     {
         Schema::create('item_tags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->unsignedInteger('item_id');
+            $table->unsignedInteger('tag_id');
+            $table->primary(['item_id', 'tag_id']);
         });
     }
 
