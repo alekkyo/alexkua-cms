@@ -15,13 +15,13 @@
 
                 <!-- Dashboard -->
                 <li class="active">
-                    <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
+                    <a href="/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                 </li>
 
                 <!-- Content -->
                 <h3 class="menu-title">Content</h3>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-bag"></i>Manage items</a>
+                    <a href="/items"> <i class="menu-icon ti-bag"></i>Manage items</a>
                 </li>
                 <li>
                     <a href="widgets.html"> <i class="menu-icon ti-bag"></i>Manage purchases</a>
