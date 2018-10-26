@@ -855,7 +855,6 @@ aside.left-panel {
     line-height: 50px;
     margin: 0;
     text-align: left;
-    text-transform: capitalize;
     display: block;
     min-height: 69px;
     padding: 0;
@@ -1609,7 +1608,7 @@ header .form-inline {
 .login-form h4 {
   color: #878787;
   text-align: center;
-  margin-bottom: 50px; }
+  margin-bottom: 20px; }
 
 .login-form .checkbox {
   color: #878787; }

@@ -64,9 +64,7 @@
         <div class="col-sm-8">
             <div class="page-header float-right">
                 <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li class="active">@yield('subtitle')</li>
-                    </ol>
+                    @yield('breadcrumb')
                 </div>
             </div>
         </div>
@@ -74,6 +72,9 @@
 
     <div class="content mt-3">
         @yield('content')
+    </div>
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
     </div>
 </div><!-- /#right-panel -->
 
@@ -83,7 +84,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/main.js"></script>
-
 
 <script src="/js/lib/chart-js/Chart.bundle.js"></script>
 <script src="/js/dashboard.js"></script>
@@ -110,6 +110,8 @@
         });
     })(jQuery);
 </script>
+<script src="/js/global.js"></script>
+@yield('scripts')
 
 </body>
 </html>

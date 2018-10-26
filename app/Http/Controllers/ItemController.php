@@ -20,9 +20,23 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
         $items = $this->itemManager->getItems();
-        return view('items');
+        return view('items', [
+            'items' => $items,
+        ]);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdd()
+    {
+        return view('items_add',[
+            'categories' => [],
+        ]);
     }
 }

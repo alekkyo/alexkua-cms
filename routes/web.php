@@ -16,8 +16,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-//Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-    Route::get('/items', 'ItemController@index')->name('items');
-//});
+    Route::get('/items', 'ItemController@show')->name('items');
+    Route::get('/items/add', 'ItemController@showAdd')->name('items');
+});

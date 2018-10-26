@@ -21,20 +21,20 @@
                 <!-- Content -->
                 <h3 class="menu-title">Content</h3>
                 <li>
-                    <a href="/items"> <i class="menu-icon ti-bag"></i>Manage items</a>
+                    <a href="/items"> <i class="menu-icon ti-bag"></i>Items</a>
                 </li>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-bag"></i>Manage purchases</a>
+                    <a href="widgets.html"> <i class="menu-icon ti-bag"></i>Purchases</a>
                 </li>
 
                 <!-- Settings -->
                 <h3 class="menu-title">Settings</h3>
 
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-user"></i>Manage users</a>
+                    <a href="widgets.html"> <i class="menu-icon ti-user"></i>Users</a>
                 </li>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-settings"></i>System configuration </a>
+                    <a href="widgets.html"> <i class="menu-icon ti-settings"></i>Settings</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
