@@ -14,7 +14,7 @@
     <div class="card">
         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="card-header">
-                <strong>Add Item</strong> Fill up the form to add a new item
+                <strong>Add Item</strong><br/>Fill up the form to add a new item
             </div>
             <div class="card-body card-block">
                 <!-- Name -->

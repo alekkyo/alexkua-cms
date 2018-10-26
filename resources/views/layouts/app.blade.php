@@ -25,6 +25,7 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -33,7 +34,7 @@
     <link rel="stylesheet" href="/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="/scss/style.css">
-    <link href="/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/custom.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -54,14 +55,15 @@
     <!-- Header-->
 
     <div class="breadcrumbs">
-        <div class="col-sm-4">
+        <div class="col-md-7 col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>@yield('title')</h1>
+                    <div class="pb-3 small hidden-sm">@yield('subtitle')</div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-md-5 col-sm-8 small">
             <div class="page-header float-right">
                 <div class="page-title">
                     @yield('breadcrumb')
@@ -80,36 +82,11 @@
 
 <!-- Right Panel -->
 
-<script src="/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script> <!-- JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/main.js"></script>
-
-<script src="/js/lib/chart-js/Chart.bundle.js"></script>
-<script src="/js/dashboard.js"></script>
-<script src="/js/widgets.js"></script>
-<script src="/js/lib/vector-map/jquery.vmap.js"></script>
-<script src="/js/lib/vector-map/jquery.vmap.min.js"></script>
-<script src="/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-<script src="/js/lib/vector-map/country/jquery.vmap.world.js"></script>
-<script>
-    (function ($) {
-        "use strict";
-
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
-        });
-    })(jQuery);
-</script>
 <script src="/js/global.js"></script>
 @yield('scripts')
 

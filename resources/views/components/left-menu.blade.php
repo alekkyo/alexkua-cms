@@ -24,7 +24,10 @@
                     <a href="/items"> <i class="menu-icon ti-bag"></i>Items</a>
                 </li>
                 <li>
-                    <a href="widgets.html"> <i class="menu-icon ti-bag"></i>Purchases</a>
+                    <a href="/categories"> <i class="menu-icon ti-folder"></i>Categories</a>
+                </li>
+                <li>
+                    <a href="widgets.html"> <i class="menu-icon ti-receipt"></i>Purchases</a>
                 </li>
 
                 <!-- Settings -->
