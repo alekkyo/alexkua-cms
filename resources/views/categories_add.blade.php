@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('menu-categories', true)
+
 @section('title', 'Add a new category')
 
 @section('breadcrumb')

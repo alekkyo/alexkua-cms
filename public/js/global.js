@@ -22,4 +22,22 @@ jQuery(document).ready(function($) {
 
     // Init tooltips
     $('[data-toggle="tooltip"]').tooltip();
+
+    // Override alert
+    window.confirm = function(message, onSuccess, onCancel) {
+        $("#staticModal").modal('show');
+        $("#staticModal .modal-body p").html(message);
+        $("#staticModal .modal-footer .cancelBtn").click(function() {
+            if (typeof onCancel !== 'undefined') {
+                onCancel();
+            }
+            $("#staticModal .modal-footer .btn").unbind();
+            $("#staticModal").modal('hide');
+        });
+        $("#staticModal .modal-footer .confirmBtn").click(function() {
+            onSuccess();
+            $("#staticModal .modal-footer .btn").unbind();
+            $("#staticModal").modal('hide');
+        });
+    }
 });

@@ -14,29 +14,29 @@
             <ul class="nav navbar-nav">
 
                 <!-- Dashboard -->
-                <li class="active">
+                <li @if (View::hasSection('menu-dashboard'))class="active"@endif>
                     <a href="/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                 </li>
 
                 <!-- Content -->
                 <h3 class="menu-title">Content</h3>
-                <li>
+                <li @if (View::hasSection('menu-items'))class="active"@endif>
                     <a href="/items"> <i class="menu-icon ti-bag"></i>Items</a>
                 </li>
-                <li>
+                <li @if (View::hasSection('menu-categories'))class="active"@endif>
                     <a href="/categories"> <i class="menu-icon ti-folder"></i>Categories</a>
                 </li>
-                <li>
+                <li @if (View::hasSection('menu-purchases'))class="active"@endif>
                     <a href="widgets.html"> <i class="menu-icon ti-receipt"></i>Purchases</a>
                 </li>
 
                 <!-- Settings -->
                 <h3 class="menu-title">Settings</h3>
 
-                <li>
+                <li @if (View::hasSection('menu-users'))class="active"@endif>
                     <a href="widgets.html"> <i class="menu-icon ti-user"></i>Users</a>
                 </li>
-                <li>
+                <li @if (View::hasSection('menu-settings'))class="active"@endif>
                     <a href="widgets.html"> <i class="menu-icon ti-settings"></i>Settings</a>
                 </li>
             </ul>

@@ -78,6 +78,25 @@
 
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
     </div>
+
+    <!-- Alert modal -->
+    <div class="modal fade show" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" data-backdrop="static" style="display: none;">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticModalLabel">Please confirm</h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondar cancelBtn">Cancel</button>
+                    <button type="button" class="btn btn-primary confirmBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->

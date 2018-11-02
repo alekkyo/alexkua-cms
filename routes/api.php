@@ -18,5 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Route::group(['middleware' => 'auth:api'], function () {
-    Route::resource('categories', 'Api\CategoryController', ['only' => ['store']]);
+    Route::resource('categories', 'Api\CategoryController', ['only' => ['store', 'destroy']]);
+    Route::post('categories/{category}/order-up', 'Api\CategoryController@moveOrderUp');
+    Route::post('categories/{category}/order-down', 'Api\CategoryController@moveOrderDown');
 //});

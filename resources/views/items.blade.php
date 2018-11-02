@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('menu-items', true)
+
 @section('title', 'Items')
 
 @section('breadcrumb')

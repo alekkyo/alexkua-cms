@@ -2,6 +2,8 @@
 
 @section('title', 'Categories')
 
+@section('menu-categories', true)
+
 @section('subtitle', 'You can manage the categories in your website here')
 
 @section('breadcrumb')
@@ -32,7 +34,7 @@
                 No categories!
             </div>
         @else
-            <table class="table table-striped">
+            <table id="categoriesTable" class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
                     <th class="checkbox" scope="col">
@@ -44,29 +46,57 @@
                 </thead>
                 <tbody>
                     @foreach ($categories as $category)
-                        <tr>
+                        <tr data-id="{{$category->id}}" data-name="{{$category->name}}">
                             <td class="checkbox align-middle">
                                 <input type="checkbox" id="categoryCheckbox_{{$category->id}}" name="categoryCheckbox{{$category->id}}">
                             </td>
                             <td class="align-middle">{{$category->name}}</td>
                             <td class="text-right align-middle">
-                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Moveup">
+                                <button type="button" class="moveOrderUpBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move up">
                                     <i class="fa fa-arrow-up"></i>
                                 </button>
-                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Movedown">
+                                <button type="button" class="moveOrderDownBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move down">
                                     <i class="fa fa-arrow-down"></i>
                                 </button>
-                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <button type="button" class="editBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="fa fa-pencil"></i>
                                 </button>
-                                <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <button type="button" class="deleteBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="fa fa-remove"></i>
                                 </button>
                             </td>
                         </tr>
+                        @foreach ($category['children'] as $child)
+                            <tr data-id="{{$child->id}}" data-name="{{$child->name}}">
+                                <td class="checkbox align-middle">
+                                    <input type="checkbox" id="categoryCheckbox_{{$child->id}}" name="categoryCheckbox{{$child->id}}">
+                                </td>
+                                <td class="align-middle">
+                                    <i class="fa fa-arrow-right"></i>&nbsp;
+                                    {{$child->name}}</td>
+                                <td class="text-right align-middle">
+                                    <button type="button" class="moveOrderUpBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move up">
+                                        <i class="fa fa-arrow-up"></i>
+                                    </button>
+                                    <button type="button" class="moveOrderDownBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move down">
+                                        <i class="fa fa-arrow-down"></i>
+                                    </button>
+                                    <button type="button" class="editBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                    <button type="button" class="deleteBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="fa fa-remove"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                     @endforeach
                 </tbody>
             </table>
         @endif
     </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/categories.js"></script>
 @endsection

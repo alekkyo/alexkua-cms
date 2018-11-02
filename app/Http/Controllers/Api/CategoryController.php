@@ -36,4 +36,35 @@ class CategoryController extends Controller
         }
         return response($category);
     }
+
+    /**
+     * Delete category
+     * @param Category $category
+     * @return bool
+     * @throws \Exception
+     */
+    public function destroy(Category $category)
+    {
+        if (!$category->delete()) {
+            return response('Could not delete category', 400);
+        }
+    }
+
+    /**
+     * Move order up
+     * @param Category $category
+     */
+    public function moveOrderUp(Category $category)
+    {
+        $this->categoryManager->updateOrder($category, false);
+    }
+
+    /**
+     * Move order down
+     * @param Category $category
+     */
+    public function moveOrderDown(Category $category)
+    {
+        $this->categoryManager->updateOrder($category, true);
+    }
 }
