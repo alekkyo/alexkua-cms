@@ -1,24 +1,25 @@
-<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="modal-dialog modal-lg" role="document" id="imageManager">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="largeModalLabel">Image Manager</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="imagesList" style="border: 1px black solid; width:100%; height:250px; float:left;"></div>
+            <div class="uploadImage" style="text-align:center; padding-top: 20px; width:100%; height:75px; float:left;">
+                <form name="formImageManager" action="/api/image-manager/images" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input type="file" name="image"/>
+                    <input type="submit" value="Save"/>
+                </form>
             </div>
-            <div class="modal-body">
-                <p>
-                    There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra
-                    and the mountain zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus
-                    Dolichohippus. The latter resembles an ass, to which it is closely related, while the former two are more
-                    horse-like. All three belong to the genus Equus, along with other living equids.
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
+            {{--<div class="selectedPicture" style="background-color:green; width:300px; height:375px; float:left;"></div>--}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="chooseBtn">Choose</button>
         </div>
     </div>
 </div>

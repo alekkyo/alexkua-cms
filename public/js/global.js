@@ -6,11 +6,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-	// Image manager on click
-	$('.imageManagerBtn').click(function() {
-		console.log('open image manager');
-	});
-
 	// Toastr init
     toastr.options.newestOnTop = false;
     toastr.options.progressBar = true;

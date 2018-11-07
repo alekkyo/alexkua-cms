@@ -35,12 +35,9 @@ class CategoryManager
     public function updateOrder(Category $category, $moveDown)
     {
         if ($category->isChild()) {
-            logger('child');
             $replacement = Category::where('parent_id', $category->parent_id)
                 ->where('order', ($moveDown ? ($category->order + 1) : ($category->order - 1)))
                 ->first();
-            logger('replacement');
-            logger($replacement);
             if (!empty($replacement)) {
                 $categoryLastOrder = $category->order;
                 $category->update([
@@ -51,7 +48,6 @@ class CategoryManager
                 ]);
             }
         } else {
-            logger('not');
             $replacement = Category::whereNull('parent_id')
                 ->where('order', ($moveDown ? ($category->order + 1) : ($category->order - 1)))
                 ->first();

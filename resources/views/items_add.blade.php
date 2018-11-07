@@ -55,12 +55,14 @@
                 </div>
 
                 <!-- Image -->
-                <div class="row form-group">
+                <div class="row form-group" id="imageInput">
                     <div class="col col-md-3"><label for="name" class=" form-control-label">Picture</label></div>
                     <div class="col-12 col-md-9">
                         <div class="input-group">
-                            <p class="form-control-static">No image</p>
-                            &nbsp;&nbsp;<a href="javascript:null" class="imageManagerBtn"><i class="fa fa-picture-o"></i></a>
+                            <p class="form-control-static imageName">No image</p>&nbsp;
+                            <a href="javascript:null" class="imageManagerBtn"><i class="fa fa-picture-o"></i></a>
+                            <input type="hidden" name="image" id="image" value=""/>
+                            <a href="javascript:null" onClick="removeImage()" class="imageRemove" style="display:none;"><i class="fa fa-remove"></i></a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +73,10 @@
                         <select name="select" id="select" class="form-control" required>
                             <option value="">Please select</option>
                             @foreach ($categories as $category)
-                                <option value="1">Option #1</option>
+                                <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                @foreach ($category['children'] as $child)
+                                    <option value="{{ $child['id'] }}">- {{ $child['name'] }}</option>
+                                @endforeach
                             @endforeach
                         </select>
                     </div>
@@ -91,4 +96,19 @@
 
 @section('scripts')
     <script src="/js/items.js"></script>
+    <script src="/js/image-manager.js"></script>
+    <script>
+        imageManager.init(function(image) {
+            jQuery('#imageInput .imageName').html('<a target="_blank" href="' + image + '">' + image.replace('/images/uploads/', '') + '</a>');
+            jQuery('#imageInput #image').html(image);
+            jQuery('#imageInput .imageRemove').show();
+            jQuery('#imageInput .imageManagerBtn').hide();
+        });
+        function removeImage() {
+            jQuery('#imageInput .imageName').html('No image');
+            jQuery('#imageInput #image').html('');
+            jQuery('#imageInput .imageRemove').hide();
+            jQuery('#imageInput .imageManagerBtn').show();
+        }
+    </script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Managers\ItemManager;
+use App\Managers\CategoryManager;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -35,8 +36,10 @@ class ItemController extends Controller
      */
     public function showAdd()
     {
+        /** @var CategoryManager $categoryManager */
+        $categoryManager = resolve(CategoryManager::class);
         return view('items_add',[
-            'categories' => [],
+            'categories' => $categoryManager->getCategories(),
         ]);
     }
 }

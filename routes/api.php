@@ -21,4 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::resource('categories', 'Api\CategoryController', ['only' => ['store', 'destroy']]);
     Route::post('categories/{category}/order-up', 'Api\CategoryController@moveOrderUp');
     Route::post('categories/{category}/order-down', 'Api\CategoryController@moveOrderDown');
+    Route::get('image-manager', 'ImageManagerController@show');
+    Route::get('image-manager/images', 'ImageManagerController@getImages');
+    Route::post('image-manager/upload', 'ImageManagerController@uploadImage');
 //});
