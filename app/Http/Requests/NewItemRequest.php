@@ -27,7 +27,7 @@ class NewItemRequest extends FormRequest
             'name' => 'string|required',
             'description' => 'string|required',
             'price' => 'numeric|required',
-            'price_special' => 'numeric',
+            'price_special' => 'present:numeric',
             'image' => 'present',
             'category' => 'required',
         ];

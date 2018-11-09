@@ -86,3 +86,7 @@
         @endif
     </div>
 @endsection
+
+@section('scripts')
+    <script src="/js/items.js"></script>
+@endsection

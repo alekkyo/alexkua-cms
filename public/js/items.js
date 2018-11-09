@@ -36,4 +36,27 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+    // Delete
+    var btnClicked = false;
+    $('#itemsTable .deleteBtn').click(function() {
+        var dataId = $(this).closest('tr').attr('data-id');
+        var dataName = $(this).closest('tr').attr('data-name');
+        window.confirm('Are you sure you want to delete <b>' + dataName + '</b>?', function() {
+            if (btnClicked) {
+                return;
+            }
+            btnClicked = true;
+            $.ajax({
+                type: "DELETE",
+                url: '/api/items/' + dataId
+            }).done(function() {
+                window.location.reload();
+                btnClicked = false;
+            }).fail(function(response) {
+                toastr.error(response.responseText);
+                btnClicked = false;
+            });
+        });
+    });
 });

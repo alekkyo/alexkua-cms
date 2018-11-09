@@ -47,7 +47,7 @@
                 </thead>
                 <tbody>
                 @foreach ($users as $user)
-                    <tr data-id="{{$user->id}}" data-name="{{$user->name}}">
+                    <tr data-id="{{$user->id}}" data-name="{{$user->full_name}}">
                         <td class="checkbox align-middle">
                             <input type="checkbox" id="userCheckbox_{{$user->id}}" name="userCheckbox{{$user->id}}" class="itemCheckbox">
                         </td>
