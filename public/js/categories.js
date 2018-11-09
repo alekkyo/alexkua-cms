@@ -23,6 +23,26 @@ jQuery(document).ready(function($) {
         return false;
     });
 
+    // Search
+    $("#search").keyup(function() {
+        var searchValue = $(this).val().toUpperCase();
+        $('#categoriesTable tbody tr').show();
+        $('#categoriesTable tbody tr').each(function() {
+            var foundValue = false;
+            $(this).find('td.searchable').each(function() {
+                if (foundValue) return;
+                if ($(this).html().toUpperCase().indexOf(searchValue) >= 0) {
+                    foundValue = true;
+                }
+            });
+            if (foundValue) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+
     // Move up
     var btnClicked = false;
     $('#categoriesTable .moveOrderUpBtn').click(function() {

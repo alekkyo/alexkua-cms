@@ -6,6 +6,14 @@
     width: 25px;
 }
 
+.items .active {
+    width: 50px;
+}
+
+.items .actions {
+    width: 120px;
+}
+
 .categories .order {
     width: 50px;
 }

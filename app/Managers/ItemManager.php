@@ -14,7 +14,7 @@ class ItemManager
      */
     public function getItems(array $params = [])
     {
-        $items = Item::query();
+        $items = Item::query()->with('category');
         return $items->get();
     }
 }

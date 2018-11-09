@@ -51,9 +51,9 @@
                         <td class="checkbox align-middle">
                             <input type="checkbox" id="userCheckbox_{{$user->id}}" name="userCheckbox{{$user->id}}" class="itemCheckbox">
                         </td>
-                        <td class="align-middle">{{$user->full_name}}</td>
-                        <td class="align-middle">{{$user->username}}</td>
-                        <td class="align-middle">{{$user->email}}</td>
+                        <td class="align-middle searchable">{{$user->full_name}}</td>
+                        <td class="align-middle searchable">{{$user->username}}</td>
+                        <td class="align-middle searchable">{{$user->email}}</td>
                         <td class="active text-center align-middle">
                             <label class="switch switch-3d switch-success">
                                 <input type="checkbox" class="switch-input" checked="true">
@@ -75,4 +75,8 @@
             </table>
         @endif
     </div>
+@endsection
+
+@section('scripts')
+    <script src="/js/users.js"></script>
 @endsection

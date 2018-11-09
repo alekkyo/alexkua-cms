@@ -51,7 +51,7 @@
                             <td class="checkbox align-middle">
                                 <input type="checkbox" id="categoryCheckbox_{{$category->id}}" name="categoryCheckbox{{$category->id}}">
                             </td>
-                            <td class="align-middle">{{$category->name}}</td>
+                            <td class="align-middle searchable">{{$category->name}}</td>
                             <td class="order text-center align-middle">{{$category->order}}</td>
                             <td class="actions text-right align-middle">
                                 <button type="button" class="moveOrderUpBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move up">
@@ -73,7 +73,7 @@
                                 <td class="checkbox align-middle">
                                     <input type="checkbox" id="categoryCheckbox_{{$child->id}}" name="categoryCheckbox{{$child->id}}" class="itemCheckbox">
                                 </td>
-                                <td class="align-middle">
+                                <td class="align-middle searchable">
                                     <i class="fa fa-arrow-right"></i>&nbsp;
                                     {{$child->name}}
                                 </td>

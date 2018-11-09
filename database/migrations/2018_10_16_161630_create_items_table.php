@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->text('description');
             $table->decimal('price');
             $table->decimal('price_special')->nullable();
-            $table->string('picture_url');
+            $table->string('picture_url')->nullable();
             $table->unsignedInteger('order');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('stock')->default(0);

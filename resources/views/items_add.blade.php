@@ -14,7 +14,7 @@
 
 @section('content')
     <div class="card">
-        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <form id="formAddItem" action="/api/items" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="card-header">
                 <strong>Add Item</strong><br/>Fill up the form to add a new item
             </div>

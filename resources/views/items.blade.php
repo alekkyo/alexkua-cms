@@ -32,27 +32,55 @@
                 No items!
             </div>
         @else
-            <table class="table table-striped">
+            <table id="itemsTable" class="table table-striped">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th class="checkbox" scope="col">
+                        <input type="checkbox" class="checkboxAll">
+                    </th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date Added</th>
+                    <th class="active text-center" scope="col">Active</th>
+                    <th class="actions text-right" scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-
-                    @foreach ($items as $item)
-                        <tr>
-                            <th scope="row">
-                                <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" class="form-check-input">
-                            </th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    @endforeach
+                @foreach ($items as $item)
+                    <tr data-id="{{$item->id}}" data-name="{{$item->name}}">
+                        <td class="checkbox align-middle">
+                            <input type="checkbox" id="itemCheckbox_{{$item->id}}" name="itemCheckbox{{$item->id}}" class="itemCheckbox">
+                        </td>
+                        <td class="align-middle searchable">{{$item->name}}</td>
+                        <td class="align-middle searchable">
+                            @if (!empty($item->price_special))
+                                {{$item->price_special}} <s>{{$item->price}}</s>
+                            @else
+                                {{$item->price}}
+                            @endif
+                        </td>
+                        <td class="align-middle searchable">
+                            {{$item->category->name}}
+                        </td>
+                        <td class="align-middle searchable">{{$item->created_at}}</td>
+                        <td class="active text-center align-middle">
+                            <label class="switch switch-3d switch-success">
+                                <input type="checkbox" class="switch-input" checked="true">
+                                <span class="switch-label"></span>
+                                <span class="switch-handle"></span>
+                            </label>
+                        </td>
+                        <td class="actions text-right align-middle">
+                            <button type="button" class="editBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button type="button" class="deleteBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="fa fa-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         @endif
