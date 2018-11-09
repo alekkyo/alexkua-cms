@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'password'            => bcrypt('abc123'),
             'first_name'          => 'Alex',
             'last_name'           => 'Kua',
-            'role'                => 1,
+            'role'                => 2,
         ]);
     }
 }

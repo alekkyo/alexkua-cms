@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-    <div class="items">
+    <div class="categories">
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
@@ -41,7 +41,8 @@
                         <input type="checkbox" class="checkboxAll">
                     </th>
                     <th scope="col">Name</th>
-                    <th class="text-right" scope="col">Actions</th>
+                    <th class="order" scope="col">Order</th>
+                    <th class="actions text-right" scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,7 +52,8 @@
                                 <input type="checkbox" id="categoryCheckbox_{{$category->id}}" name="categoryCheckbox{{$category->id}}">
                             </td>
                             <td class="align-middle">{{$category->name}}</td>
-                            <td class="text-right align-middle">
+                            <td class="order text-center align-middle">{{$category->order}}</td>
+                            <td class="actions text-right align-middle">
                                 <button type="button" class="moveOrderUpBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move up">
                                     <i class="fa fa-arrow-up"></i>
                                 </button>
@@ -69,11 +71,13 @@
                         @foreach ($category['children'] as $child)
                             <tr data-id="{{$child->id}}" data-name="{{$child->name}}">
                                 <td class="checkbox align-middle">
-                                    <input type="checkbox" id="categoryCheckbox_{{$child->id}}" name="categoryCheckbox{{$child->id}}">
+                                    <input type="checkbox" id="categoryCheckbox_{{$child->id}}" name="categoryCheckbox{{$child->id}}" class="itemCheckbox">
                                 </td>
                                 <td class="align-middle">
                                     <i class="fa fa-arrow-right"></i>&nbsp;
-                                    {{$child->name}}</td>
+                                    {{$child->name}}
+                                </td>
+                                <td class="align-middle">{{$child->order}}</td>
                                 <td class="text-right align-middle">
                                     <button type="button" class="moveOrderUpBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Move up">
                                         <i class="fa fa-arrow-up"></i>

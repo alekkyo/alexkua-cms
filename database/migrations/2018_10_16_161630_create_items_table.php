@@ -18,11 +18,11 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->decimal('price');
-            $table->decimal('price_special');
+            $table->decimal('price_special')->nullable();
             $table->string('picture_url');
             $table->unsignedInteger('order');
             $table->unsignedInteger('category_id');
-            $table->unsignedInteger('stock');
+            $table->unsignedInteger('stock')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

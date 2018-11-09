@@ -28,6 +28,7 @@ class CategoryController extends Controller
     {
         $category = new Category;
         $category->name = $request->name;
+        $category->order = (Category::whereNull('parent_id')->max('order') ?? 0) + 1;
         if (!empty($request->parentCategory)) {
             $category->parent_id = $request->parentCategory;
         }

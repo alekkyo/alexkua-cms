@@ -9,6 +9,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public $appends = ['full_name'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

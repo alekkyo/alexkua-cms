@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('role');
+            $table->integer('role')->default(\App\Models\Role::ROLE_REGULAR);
             $table->rememberToken();
             $table->timestamps();
         });

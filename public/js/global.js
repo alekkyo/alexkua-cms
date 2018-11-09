@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    });
+    })
 
 	// Toastr init
     toastr.options.newestOnTop = false;
@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 
     // Checkbox all
     $('.checkboxAll').change(function() {
-        $(this).closest('table').find('input[type=checkbox]').prop('checked', $(this).prop('checked'));
+        $(this).closest('table').find('.itemCheckbox').prop('checked', $(this).prop('checked'));
     });
 
     // Init tooltips

@@ -1,3 +1,23 @@
+.switch.switch-3d {
+    margin-bottom: 0px;
+}
+
 .table th.checkbox, .table td.checkbox {
-    width:25px;
+    width: 25px;
+}
+
+.categories .order {
+    width: 50px;
+}
+
+.categories .actions {
+    width: 200px;
+}
+
+.users .active {
+    width: 50px;
+}
+
+.users .actions {
+    width: 120px;
 }

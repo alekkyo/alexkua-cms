@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Managers\ItemManager;
+use App\Managers\UserManager;
 use App\Managers\CategoryManager;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class UserController extends Controller
 {
-    /** @var ItemManager $itemManager */
-    protected $itemManager;
+    /** @var UserManager $userManager */
+    protected $userManager;
 
-    public function __construct(ItemManager $itemManager)
+    public function __construct(UserManager $userManager)
     {
-        $this->itemManager = $itemManager;
+        $this->userManager = $userManager;
     }
 
     /**
@@ -23,9 +23,9 @@ class ItemController extends Controller
      */
     public function show()
     {
-        $items = $this->itemManager->getItems();
-        return view('items', [
-            'items' => $items,
+        $users = $this->userManager->getUsers();
+        return view('users', [
+            'users' => $users,
         ]);
     }
 
@@ -38,7 +38,7 @@ class ItemController extends Controller
     {
         /** @var CategoryManager $categoryManager */
         $categoryManager = resolve(CategoryManager::class);
-        return view('items_add',[
+        return view('users_add',[
             'categories' => $categoryManager->getCategories(),
         ]);
     }

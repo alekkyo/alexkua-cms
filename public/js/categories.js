@@ -11,13 +11,13 @@ jQuery(document).ready(function($) {
         $('#submitCategoryBtn').prop('disabled', true);
         $('#submitCategoryBtn').addClass('disabled');
         $.post($(this).attr('action'), $(this).serialize(), function(response) {
-            toastrr.success('Successfully added category!');
+            toastr.success('Successfully added category!');
             setTimeout(function() {
                 window.location.href = '/categories';
             }, 3000)
         }).fail(function(response) {
             toastr.error(response.responseText);
-            $('#submitCategoryBtn').props('disabled', false);
+            $('#submitCategoryBtn').prop('disabled', false);
             $('#submitCategoryBtn').removeClass('disabled');
         });
         return false;
