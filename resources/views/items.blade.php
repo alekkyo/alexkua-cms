@@ -14,12 +14,12 @@
 @section('content')
     <div class="items">
         <div class="row">
-            <div class="col-6">
+            <div class="col-md-6 col-lg-5">
                 <div class="form-group">
                     <input id="search" name="search" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="Search...">
                 </div>
             </div>
-            <div class="col-6 text-right">
+            <div class="col-md-6 col-lg-7 text-right">
                 <div class="form-group">
                     <a href="/items/add">
                         <button type="button" class="btn btn-outline-primary"><i class="fa fa-plus"></i>&nbsp; Add a new item</button>

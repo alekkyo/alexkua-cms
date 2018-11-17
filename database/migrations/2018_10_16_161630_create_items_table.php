@@ -23,6 +23,7 @@ class CreateItemsTable extends Migration
             $table->unsignedInteger('order');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('stock')->default(0);
+            $table->string('permalink')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -10,7 +10,7 @@ class ItemManager
     /**
      * Get all items for the search query
      * @param array $params
-     * @return []
+     * @return array
      */
     public function getItems(array $params = [])
     {

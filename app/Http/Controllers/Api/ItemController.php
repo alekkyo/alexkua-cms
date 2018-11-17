@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\TextHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewItemRequest;
 use App\Managers\ItemManager;
@@ -34,6 +35,15 @@ class ItemController extends Controller
         $item->picture_url = $request->image;
         $item->category_id = $request->category;
         $item->order = 0;
+
+        // Generate permalink
+        $i = 0;
+        do {
+            $permalink = TextHelper::toPermalink($request->name) . (($i > 0) ? '-' . $i : '');
+            $i++;
+        } while (Item::where('permalink', $permalink)->exists());
+        $item->permalink = $permalink;
+
         if (!$item->save()) {
             throw new \Exception ('Could not save new item');
         }
