@@ -29,6 +29,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function shoppingCart()
+    {
+        return $this->hasMany(ShoppingCart::class);
+    }
+
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;

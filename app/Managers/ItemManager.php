@@ -17,4 +17,14 @@ class ItemManager
         $items = Item::query()->with('category');
         return $items->get();
     }
+
+    /**
+     * Get item with permalink
+     * @param string $permalink
+     * @return Item
+     */
+    public function getItemByPermalink($permalink)
+    {
+        return Item::where('permalink', $permalink)->first();
+    }
 }
