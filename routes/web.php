@@ -27,4 +27,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('categories/{category}/edit', 'CategoryController@showEdit')->name('categoriesEdit');
     Route::get('users', 'UserController@show')->name('users');
     Route::get('users/add', 'UserController@showAdd')->name('usersAdd');
+    Route::get('users/{user}/schedule', 'UserController@showSchedule')->name('usersSchedule');
 });

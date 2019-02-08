@@ -1,3 +1,7 @@
+.btn-default {
+    background-color: buttonface;
+}
+
 .switch.switch-3d {
     margin-bottom: 0px;
 }
@@ -27,5 +31,5 @@
 }
 
 .users .actions {
-    width: 120px;
+    width: 160px;
 }

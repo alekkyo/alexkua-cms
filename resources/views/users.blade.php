@@ -62,6 +62,9 @@
                             </label>
                         </td>
                         <td class="actions text-right align-middle">
+                            <a href="/users/{{$user->id}}/schedule" class="scheduleBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Schedule">
+                                <i class="fa fa-clock-o"></i>
+                            </a>
                             <button type="button" class="editBtn btn btn-default" data-toggle="tooltip" data-placement="top" title="Edit">
                                 <i class="fa fa-pencil"></i>
                             </button>
